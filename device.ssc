@@ -1,0 +1,18 @@
+
+class DEVICE extends PRODUCT
+{
+	
+}
+
+material DV201 { name "Push Button, Black" classes DEVICE }
+
+knowledgeBase DEVICE_KB
+{
+	logsys "LOCAL"
+	version "1.0"
+	validFrom     2014-01-01
+	status released
+	profiles
+		name "DV201_PRF"	material DV201
+}
+
