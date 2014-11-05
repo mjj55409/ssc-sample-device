@@ -1,0 +1,29 @@
+
+class SALES_CONTEXT
+{
+	characteristics
+		RFC_DOCUMENT_TYPE	invisible,
+		RFC_DOCUMENT_ID		invisible,
+		RFC_DOCUMENT_CAT	invisible,
+		RFC_SALES_ORG		invisible,
+		RFC_SHIP_TO			invisible,
+		RFC_SOLD_TO			invisible,
+}
+
+class PRODUCT
+{
+	characteristics
+		RFC_MATNR			invisible,
+		RFC_BASE_UOM		invisible,
+}
+
+
+characteristic RFC_SHIP_TO			{ textLength 10 					reference table "VBAP_WE" 		field "KUNNR"}
+characteristic RFC_SOLD_TO		 	{ textLength 10   					reference table 'VBAK'  		field 'KUNNR'	 }
+characteristic RFC_SALES_ORG 		{ textLength 14						reference table "CRMD_ORGMAN" 	field "SALES_ORG" }
+characteristic RFC_BASE_UOM			{ textLength 3						reference table "VBAP"			field "MEINS" }
+characteristic RFC_DOCUMENT_TYPE	{ textLength 4	 					reference table 'VBAK'			field 'AUART' }
+characteristic RFC_DOCUMENT_ID 		{ textLength 10 					reference table 'VBAK'			field 'VBELN' }
+characteristic RFC_DOCUMENT_CAT		{ textLength 10					 	reference table 'VBAK'			field 'VBTYP' }
+characteristic RFC_MATNR 			{ textLength 18						reference table 'MARA' 			field 'MATNR' }
+characteristic RFC_QUANTITY 		{ numericLength 13 decimalPlaces 3	reference table 'STPO' 			field 'MENGE' }
